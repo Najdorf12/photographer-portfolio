@@ -1,14 +1,16 @@
+import firma from "/firma.png"
+
 const Cita = () => {
   return (
     <>
       <article className="cita-wrapper">
         <h5>
-          ¡Que alguien me diga a donde esta la gallina que venia conmigo! ¿Que
-          sabra el chancho de golosinas si nunca tuvo un kiosco? Blueeeeeee
-          Labeeeeeeeeeeeeeeeel. Sasdaasdasfdfa askdañksld asdlasd
+        “The best images are the ones that retain their 
+        strength and impact over the years, regardless of the number of times they
+       are viewed.”
        </h5>
        <div className="line3"></div>
-       <h3>Juan Carlos Lacalor</h3>
+       <img src={firma} alt="" />
       </article>
     </>
   );

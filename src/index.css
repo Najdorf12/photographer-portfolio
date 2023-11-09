@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +28,7 @@ a {
 
   --font-title: "Noto Serif Old Uyghur", serif;
   --font-text: "Playfair Display", serif;
-  --font-text2: "Edu TAS Beginner", cursive;
+  --font-text2:'Cormorant Garamond', serif;
   --cursive: "Dancing Script", cursive;
 } /* */
 body {
@@ -59,13 +60,46 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 0.5rem;
-  & li {
-    font-family: var(--font-text);
-    font-style: italic;
-    color: whitesmoke;
-  }
+}
+.nav-btns li {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: whitesmoke;
+  font-family: var(--font-text2);
+  font-style: italic;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
 }
 
+.nav-btns li:focus,
+.nav-btns li:hover {
+  color: whitesmoke;
+}
+
+.nav-btns li:focus:after,
+.nav-btns li:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-btns li:after {
+  content: "";
+  pointer-events: none;
+  bottom: -5px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color3);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
 
 /* Home */
 .home-wrapper {
@@ -77,9 +111,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-title);
+  font-family: var(--font-text2);
   letter-spacing: 0.1rem;
-  font-size: 0.9rem;
 }
 .line {
   width: 60px;
@@ -112,17 +145,16 @@ body {
     padding-left: 2rem;
   }
   & .text {
-    font-family: var(--font-text);
-    font-weight: 600;
+    font-family: var(--font-text2);
     padding-left: 2rem;
     display: flex;
     flex-direction: column;
     text-wrap: balance;
     margin-top: 1rem;
-    font-size: 0.9rem;
-
+    line-height: 1.4rem;
     & button {
-      font-family: var(--font-title);
+      font-family: var(--font-text2);
+      font-weight: 700;
       background-color: var(--color1);
       color: whitesmoke;
       padding: 0.5rem;
@@ -133,6 +165,8 @@ body {
       box-shadow: 2px 2px 6px var(--color3);
       border-radius: 5px;
       letter-spacing: 0.1rem;
+      cursor: pointer; 
+      transition:  transform .3s;
     }
   }
   & div {
@@ -146,8 +180,8 @@ body {
 
 .img-home {
   background-color: var(--color1);
-  height: 200px;
-  width: 220px;
+  height: 250px;
+  width: 250px;
   margin: 0 auto;
   margin-top: 6rem;
   position: relative;
@@ -155,15 +189,21 @@ body {
   border-bottom: none;
   border-radius: 3px;
   & img {
+    height: 350px;
+    width: 260px;
     position: absolute;
     bottom: 0;
+    right: 0;
   }
+}
+.text button:hover{
+  transform: scale(1.1);
 }
 
 /* Cita */
 .cita-wrapper {
   background-color: var(--color2);
-  padding: 2.5rem 0;
+  padding-top: 4rem;
   display: grid;
   place-items: center;
   text-wrap: balance;
@@ -171,21 +211,21 @@ body {
   & h5 {
     width: 90%;
     font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
     font-family: var(--font-text2);
     margin-bottom: 1.5rem;
-    color: rgb(78, 70, 70);
+    color: rgb(114, 106, 106);
   }
   & .line3 {
     height: 6px;
     width: 50px;
     background-color: var(--color3);
-    margin-bottom: 2rem;
     border-radius: 3px;
   }
-  & h3 {
-    color: whitesmoke;
-    font-size: 1.5rem;
-    font-family: var(--cursive);
+  & img {
+      margin-top: -1rem;
+      max-width: 200px;
   }
 }
 /* About */
@@ -204,9 +244,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-family: var(--font-title);
+  font-family: var(--font-text2);
   letter-spacing: 0.1rem;
-  font-size: 0.9rem;
 }
 .title-about {
   padding: 1rem;
@@ -238,6 +277,7 @@ body {
   & .text-about {
     padding: 1rem;
     font-size: 1.1rem;
+    z-index: 100;
     & ul {
       font-size: 1rem;
       margin-top: 1rem;
@@ -255,10 +295,10 @@ body {
 }
 .img-about {
   background-color: var(--color1);
-  height: 220px;
-  width: 210px;
+  height: 240px;
+  width: 240px;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 4rem;
   position: relative;
   border: 5px solid var(--color3);
   border-bottom: none;
@@ -266,21 +306,29 @@ body {
   & img {
     position: absolute;
     bottom: 0;
-    width: 250px;
+    width: 280px;
+    right: -30px;
   }
 }
 @media (width > 600px) {
+  .cita-wrapper {
+    padding-top: 3rem;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
   .about-wrapper {
     flex-direction: row;
     align-items: center;
   }
   .img-about {
-    height: 200px;
-    width: 230px;
+    height: 240px;
+    width: 240px;
     align-self: flex-end;
-    margin-left: -6rem;
+    margin-left: -5rem;
     & img {
-      width: 230px;
+      left: -30px;
+      width: 260px;
     }
   }
   .info-container-about {
@@ -301,8 +349,8 @@ body {
     }
   }
   .nav-btns {
-    font-size: 1.1rem;
     gap: 2rem;
+    letter-spacing: .2rem;
   }
 
   /* Home */
@@ -317,6 +365,7 @@ body {
     width: 60%;
     align-self: flex-start;
   }
+
   .info-container {
     margin-top: 3rem;
     & .text {
@@ -327,17 +376,18 @@ body {
   }
   .img-home {
     height: 280px;
-    width: 230px;
+    width: 280px;
     align-self: flex-end;
     & img {
-      width: 250px;
+      height: 380px;
+      width: 290px;
       right: 0;
     }
   }
   .cita-wrapper {
-    padding: 4rem 0;
+    height: 55vh;
     & h5 {
-      width: 60%;
+      width: 40%;
     }
   }
 
@@ -346,7 +396,7 @@ body {
     align-items: center;
     gap: 1rem;
     & article {
-      width: 70%;
+      width: 60%;
     }
   }
   .info-container-about {
@@ -355,11 +405,11 @@ body {
     }
   }
   .img-about {
-    height: 240px;
-    width: 230px;
-    margin-left: -5rem;
+    height: 300px;
+    width: 270px;
+    margin-left: -2rem;
     & img {
-      width: 280px;
+      width: 350px;
     }
   }
 }
@@ -375,7 +425,7 @@ body {
     padding-left: 5rem;
   }
   .info-container {
-    width: 80%;
+    width: 70%;
   }
   .title {
     max-width: 80%;
@@ -384,23 +434,30 @@ body {
     letter-spacing: 0.5rem;
   }
   .img-home {
-    height: 430px;
+    height: 400px;
     width: 400px;
     align-self: flex-end;
     & img {
-      width: 400px;
+      width: 450px;
+      height: 550px;
     }
   }
   .cita-wrapper {
-    padding: 6rem 0;
+    height: 60vh;
     & h5 {
-      width: 30%;
+      font-size: 1.3rem;
+      letter-spacing: .2rem;
+      width: 40%;
+      margin-bottom: 0;
+    }
+    & img{ 
+      margin-top: -5rem;
     }
   }
   .img-about {
     height: 350px;
     width: 320px;
-    margin-left: -7rem;
+    margin-left: -3rem;
     & img {
       width: 430px;
     }
@@ -411,7 +468,7 @@ body {
     align-items: center;
     gap: 1rem;
     & article {
-      width: 70%;
+      width: 60%;
       padding-bottom: 10rem;
       padding-left: 5rem;
     }
@@ -424,7 +481,7 @@ body {
 .swiper-slide-visible {
   & img {
     min-width: 150px;
-    min-height: 200px;
+    min-height: 200px; 
     border-radius: 10px;
     margin-left: -1rem;
   }

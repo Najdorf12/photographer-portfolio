@@ -1,8 +1,17 @@
-import slider1 from "/slider1.jpeg";
-import slider2 from "/slider2.jpeg";
-import slider3 from "/slider3.jpeg";
-import slider4 from "/slider4.jpeg";
-import slider5 from "/slider5.jpeg";
+
+import slider1 from "/slider-5.jpg";
+import slider2 from "/slider-8.jpg";
+import slider3 from "/slider-9.jpg";
+import slider4 from "/slider-10.jpg";
+import slider5 from "/slider-14.jpg";
+
+import slider7 from "/slider-1.jpg";
+import slider8 from "/slider-2.jpg";
+import slider9 from "/slider-3.jpg";
+import slider12 from "/slider-11.jpg";
+
+
+
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -30,7 +39,6 @@ const Carousel = () => {
     <div
       className="carousel"
       style={{
-        background:"#ffba08",
         overFlow: "hidden",
         width: "97vw",
         margin:"0 auto",
@@ -39,7 +47,6 @@ const Carousel = () => {
     >
       <swiper-container
         style={{
-          background:"red",
           width:"100%",
           paddingBottom:"1rem",
             '--swiper-navigation-color': 'var(--color3)',
@@ -64,10 +71,13 @@ const Carousel = () => {
         }}
       >
         <swiper-slide >
-          <img src={slider3} alt=""/>
+          <img src={slider7} alt=""/>
         </swiper-slide>
-        <swiper-slide  >
-          <img src={slider5} alt=""/>
+        <swiper-slide >
+          <img src={slider1} alt=""/>
+        </swiper-slide>
+        <swiper-slide >
+          <img src={slider9} alt=""/>
         </swiper-slide>
         <swiper-slide >
           <img src={slider3} alt=""/>
@@ -79,10 +89,14 @@ const Carousel = () => {
           <img src={slider5} alt=""/>
         </swiper-slide>
         <swiper-slide >
-          <img src={slider5} alt=""/>
+          <img src={slider2} alt=""/>
         </swiper-slide>
         <swiper-slide >
-          <img src={slider5} alt=""/>
+          <img src={slider8} alt=""/>
+        </swiper-slide>
+        
+        <swiper-slide >
+          <img src={slider12} alt=""/>
         </swiper-slide>
         ...
       </swiper-container>

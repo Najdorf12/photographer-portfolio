@@ -3,7 +3,7 @@ import imgHome2 from "/img-home2.png";
 const About = () => {
   return (
     <div className="about-wrapper">
-      <article>
+      <article className="about-container">
         <section className="profesion-about">
           <div className="line"></div>
           <h5>SOMETHING ABOUT ME</h5>
