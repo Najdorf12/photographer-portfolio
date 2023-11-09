@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -21,14 +21,12 @@ a {
   text-decoration: none;
 }
 :root {
-  --color1: rgb(5, 5, 5);
-  --color2: #0f0e0e;
-  --color3: #b31312;
-  --color4: #d21312;
-
+  --color1: #0f0e0e;
+  --color2: #191717;
+   --color3: #952323;
   --font-title: "Noto Serif Old Uyghur", serif;
   --font-text: "Playfair Display", serif;
-  --font-text2:'Cormorant Garamond', serif;
+  --font-text2: "Cormorant Garamond", serif;
   --cursive: "Dancing Script", cursive;
 } /* */
 body {
@@ -165,8 +163,8 @@ body {
       box-shadow: 2px 2px 6px var(--color3);
       border-radius: 5px;
       letter-spacing: 0.1rem;
-      cursor: pointer; 
-      transition:  transform .3s;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
   }
   & div {
@@ -196,7 +194,7 @@ body {
     right: 0;
   }
 }
-.text button:hover{
+.text button:hover {
   transform: scale(1.1);
 }
 
@@ -224,8 +222,8 @@ body {
     border-radius: 3px;
   }
   & img {
-      margin-top: -1rem;
-      max-width: 200px;
+    margin-top: -1rem;
+    max-width: 200px;
   }
 }
 /* About */
@@ -350,7 +348,7 @@ body {
   }
   .nav-btns {
     gap: 2rem;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
   }
 
   /* Home */
@@ -446,11 +444,11 @@ body {
     height: 60vh;
     & h5 {
       font-size: 1.3rem;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       width: 40%;
       margin-bottom: 0;
     }
-    & img{ 
+    & img {
       margin-top: -5rem;
     }
   }
@@ -477,11 +475,10 @@ body {
 
 /* Carousel */
 
-
 .swiper-slide-visible {
   & img {
     min-width: 150px;
-    min-height: 200px; 
+    min-height: 200px;
     border-radius: 10px;
     margin-left: -1rem;
   }
